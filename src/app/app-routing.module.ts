@@ -12,10 +12,11 @@ import { AuthGuard } from './services/auth.guard';
 import { RoleGuard } from './services/role.guard';
 import { NotCompleteGuard } from './services/not-complete.guard';
 import { ModuleGaurdGuard } from './services/module-gaurd.guard';
+import { ResolveGuard } from './services/resolve.guard';
 
 const routes: Routes = [
   {path :'home', component:HomeComponent},
-  {path :'products', component:ProductsComponent},
+  {path :'products', component:ProductsComponent, resolve: { totalFetchedData : ResolveGuard}},
   {
     path :'about', component:AboutComponent, canActivateChild:[RoleGuard],
     children:[{path:'edit', component: EditComponent}] //we can use canActivate here also but it would show us the parent route access-denied page, also we ll have to write for all the children
