@@ -7,14 +7,13 @@ import { DataService } from './data.service';
   providedIn: 'root'
 })
 export class ResolveGuard implements Resolve<string> {
-  // userRole = 'admin'
-  userRole ='user'
+
   constructor(private dataService : DataService){}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<string> | Promise<string> | string {
-        this.dataService.getData();
-    return '';
+        
+    return this.dataService.getData();
   }
   
 }
