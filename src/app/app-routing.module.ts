@@ -11,6 +11,7 @@ import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { AuthGuard } from './services/auth.guard';
 import { RoleGuard } from './services/role.guard';
 import { NotCompleteGuard } from './services/not-complete.guard';
+import { ModuleGaurdGuard } from './services/module-gaurd.guard';
 
 const routes: Routes = [
   {path :'home', component:HomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path :'contact', component:ContactComponent, canDeactivate: [NotCompleteGuard]},
   { 
       path :'offers',
+      canLoad:[ModuleGaurdGuard],
       loadChildren: () => import('./offers/offers.module').then(m => m.OffersModule)
   },
   {
