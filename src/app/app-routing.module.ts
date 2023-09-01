@@ -10,6 +10,7 @@ import { EditComponent } from './edit/edit.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { AuthGuard } from './services/auth.guard';
 import { RoleGuard } from './services/role.guard';
+import { NotCompleteGuard } from './services/not-complete.guard';
 
 const routes: Routes = [
   {path :'home', component:HomeComponent},
@@ -19,7 +20,7 @@ const routes: Routes = [
     children:[{path:'edit', component: EditComponent}] //we can use canActivate here also but it would show us the parent route access-denied page, also we ll have to write for all the children
   },
   {path :'admin', component:AdminComponent, canActivate: [AuthGuard]}, 
-  {path :'contact', component:ContactComponent},
+  {path :'contact', component:ContactComponent, canDeactivate: [NotCompleteGuard]},
   { 
       path :'offers',
       loadChildren: () => import('./offers/offers.module').then(m => m.OffersModule)

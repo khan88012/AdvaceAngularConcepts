@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['/home']);
   }
   goToProducts(){
+    this.route.navigate(['/products']);
 
   }
   goToAbout()
@@ -27,6 +28,8 @@ export class HeaderComponent implements OnInit {
 
   }
   goToContact(){
+    this.route.navigate(['/contact']);
+
   }
   goToOffers(){
     this.route.navigate(['/offers']);
