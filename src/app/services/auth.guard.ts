@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-
+//can activate gaurd allows us to restrict access to particular component with a condtion
 @Injectable({
   providedIn: 'root'
 })
