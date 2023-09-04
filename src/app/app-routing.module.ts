@@ -13,6 +13,8 @@ import { RoleGuard } from './services/role.guard';
 import { NotCompleteGuard } from './services/not-complete.guard';
 import { ModuleGaurdGuard } from './services/module-gaurd.guard';
 import { ResolveGuard } from './services/resolve.guard';
+import { ObservableComponent } from './observable/observable.component';
+import { PromiseComponent } from './promise/promise.component';
 
 const routes: Routes = [
   {path :'home', component:HomeComponent},
@@ -27,6 +29,13 @@ const routes: Routes = [
       path :'offers',
       canLoad:[ModuleGaurdGuard],
       loadChildren: () => import('./offers/offers.module').then(m => m.OffersModule)
+  },
+  {
+    path : 'observable', component: ObservableComponent
+
+  },
+  {
+    path : 'promise', component:PromiseComponent
   },
   {
     path:'access-denied', component: AccessDeniedComponent

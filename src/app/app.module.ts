@@ -14,6 +14,9 @@ import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { EditComponent } from './edit/edit.component';
+import { ObservableVpromiseComponent } from './observable-vpromise/observable-vpromise.component';
+import { ObservableComponent } from './observable/observable.component';
+import { PromiseComponent } from './promise/promise.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { EditComponent } from './edit/edit.component';
     ContactComponent,
     AdminComponent,
     AccessDeniedComponent,
-    EditComponent
+    EditComponent,
+    ObservableVpromiseComponent,
+    ObservableComponent,
+    PromiseComponent
   ],
   imports: [
     BrowserModule,
