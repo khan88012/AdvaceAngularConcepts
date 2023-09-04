@@ -24,21 +24,16 @@ export class ForkJoinExampleComponent implements OnInit {
   }
   getData()
   {
-      this.forkJoinDataService.getWidgetOneData().subscribe((res) =>
+      this.forkJoinDataService.getAllData().subscribe((res) =>
       {
-        this.schoolCount = res ;
+        this.schoolCount = res[0] ;
         this.isSpinnerOne= false;
+        this.HospitalCount = res[1];
+        this.isSpinnerTwo = false;
+        this.BankCount = res[2];
+        this.isSpinnerThree = false;
       }  );
-      this.forkJoinDataService.getWidgetTwoData().subscribe((res) =>
-      {
-        this.HospitalCount = res ;
-        this.isSpinnerTwo= false;
-      }  );
-      this.forkJoinDataService.getWidgetThreeData().subscribe((res) =>
-      {
-        this.BankCount = res ;
-        this.isSpinnerThree= false;
-      }  );
+  
   }
 
 }

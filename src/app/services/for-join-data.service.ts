@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable , forkJoin} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,33 +8,34 @@ export class ForJoinDataService {
 
   constructor() { }
 
-  getWidgetOneData()
+  getAllData()
   {
-    return new Observable<number>((observer) => {
+     let observableOneData =  new Observable<number>((observer) => {
       setTimeout(() =>{
         observer.next(23);
         observer.complete();
       }, 5000);
     });
-  }
+  
 
-  getWidgetTwoData()
-  {
-    return new Observable<number>((observer) => {
+
+    let observableTwoData = new Observable<number>((observer) => {
       setTimeout(() =>{
         observer.next(50);
         observer.complete();
       }, 3000);
     });
-  }
+ 
 
-  getWidgetThreeData()
-  {
-    return new Observable<number>((observer) => {
+
+    let observableThreeData = new Observable<number>((observer) => {
       setTimeout(() =>{
         observer.next(14);
         observer.complete();
       }, 2000);
     });
-  }
+
+    return forkJoin([ observableOneData , observableTwoData, observableThreeData]);
+
+}
 }
