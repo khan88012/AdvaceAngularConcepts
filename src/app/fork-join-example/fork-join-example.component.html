@@ -1,0 +1,49 @@
+
+<h2 class="text-center">Fork-Join-Example Dashboard</h2>
+
+<div class="d-flex justify-content-center">
+    <div class="text-center mt-5 widget">
+        <div class="d-flex flex-column">
+            <p>Schools</p>
+            <h3>{{schoolCount}}</h3>
+        </div>
+
+
+    </div>
+    
+    <div class="text-center mt-5 widget">
+        <div class="d-flex flex-column">
+
+        <p>Hospitals</p>
+        <h3>{{HospitalCount}}</h3>
+        </div>
+    </div>
+    
+    <div class="text-center mt-5 widget">
+        <div class="d-flex flex-column">
+            <p>Banks</p>
+            <h3>{{BankCount}}</h3>
+        </div>
+
+    </div>
+    
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="text-center mt-5 spinner-rect">
+        <div class="spinner-border" role="status" *ngIf="isSpinnerOne">
+          </div>
+    </div>
+    
+    <div class="text-center mt-5 spinner-rect">
+        <div class="spinner-border" role="status" *ngIf="isSpinnerTwo">
+        </div>
+    </div>
+    
+    <div class="text-center mt-5 spinner-rect">
+        <div class="spinner-border" role="status" *ngIf="isSpinnerThree">
+        </div>
+    </div>
+    
+</div>
+

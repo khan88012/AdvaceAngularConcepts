@@ -17,6 +17,7 @@ import { EditComponent } from './edit/edit.component';
 import { ObservableVpromiseComponent } from './observable-vpromise/observable-vpromise.component';
 import { ObservableComponent } from './observable/observable.component';
 import { PromiseComponent } from './promise/promise.component';
+import { ForkJoinExampleComponent } from './fork-join-example/fork-join-example.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PromiseComponent } from './promise/promise.component';
     EditComponent,
     ObservableVpromiseComponent,
     ObservableComponent,
-    PromiseComponent
+    PromiseComponent,
+    ForkJoinExampleComponent
   ],
   imports: [
     BrowserModule,
