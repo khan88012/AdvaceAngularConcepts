@@ -18,7 +18,13 @@ export class ObservableComponent implements OnInit {
       {
         this.count++;
         this.data.push(this.count);
-        observer.next(this.data)  // next method to emit the data
+        if(this.count< 5)
+        {
+          observer.next(this.data)  // next method to emit the data
+        }
+        else {
+          observer.complete(); //completion call back
+        }
       },  1000);
     })
 
