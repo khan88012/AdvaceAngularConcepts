@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -8,16 +9,24 @@ import { Component, OnInit } from '@angular/core';
 export class ObservableComponent implements OnInit {
   count= 0;
   data : number[] =[];
+  myObservable : any;
   constructor() { }
 
   ngOnInit(): void {
-    setInterval(() =>
-    {
-      this.count++;
-      this.data.push(this.count);
-    },  1000);
+    this.myObservable = new Observable<number[]>((observer)=>{
+      setInterval(() =>
+      {
+        this.count++;
+        this.data.push(this.count);
+        observer.next(this.data)  // next method to emit the data
+      },  1000);
+    })
+
   }
   getdata(){
-    console.log(this.data);
+    this.myObservable.subscribe((res : any) => {
+      console.log(res);
+
+    })
   }
 }
