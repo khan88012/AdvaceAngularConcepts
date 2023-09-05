@@ -18,6 +18,8 @@ import { ObservableVpromiseComponent } from './observable-vpromise/observable-vp
 import { ObservableComponent } from './observable/observable.component';
 import { PromiseComponent } from './promise/promise.component';
 import { ForkJoinExampleComponent } from './fork-join-example/fork-join-example.component';
+import { HttpInterceptorComponent } from './http-interceptor/http-interceptor.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -36,11 +38,13 @@ import { ForkJoinExampleComponent } from './fork-join-example/fork-join-example.
     ObservableVpromiseComponent,
     ObservableComponent,
     PromiseComponent,
-    ForkJoinExampleComponent
+    ForkJoinExampleComponent,
+    HttpInterceptorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
