@@ -15,6 +15,8 @@ import { ModuleGaurdGuard } from './services/module-gaurd.guard';
 import { ResolveGuard } from './services/resolve.guard';
 import { ObservableComponent } from './observable/observable.component';
 import { PromiseComponent } from './promise/promise.component';
+import { OfficeComponent } from './office/office.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path :'home', component:HomeComponent},
@@ -39,6 +41,12 @@ const routes: Routes = [
   },
   {
     path:'access-denied', component: AccessDeniedComponent
+  },
+  {
+    path:'office', component: OfficeComponent
+  },
+  {
+    path:'user/:id', component : UserComponent
   }
 
   

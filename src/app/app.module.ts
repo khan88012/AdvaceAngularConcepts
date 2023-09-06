@@ -21,6 +21,9 @@ import { ForkJoinExampleComponent } from './fork-join-example/fork-join-example.
 import { HttpInterceptorComponent } from './http-interceptor/http-interceptor.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { TokenInterceptor } from './services/token.interceptor';
+import { ActivatedRouteVActivatedRouteSnapshotComponent } from './activated-route-v-activated-route-snapshot/activated-route-v-activated-route-snapshot.component';
+import { UserComponent } from './user/user.component';
+import { OfficeComponent } from './office/office.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { TokenInterceptor } from './services/token.interceptor';
     ObservableComponent,
     PromiseComponent,
     ForkJoinExampleComponent,
-    HttpInterceptorComponent
+    HttpInterceptorComponent,
+    ActivatedRouteVActivatedRouteSnapshotComponent,
+    UserComponent,
+    OfficeComponent
   ],
   imports: [
     BrowserModule,
