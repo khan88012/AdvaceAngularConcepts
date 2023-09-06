@@ -24,6 +24,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 import { ActivatedRouteVActivatedRouteSnapshotComponent } from './activated-route-v-activated-route-snapshot/activated-route-v-activated-route-snapshot.component';
 import { UserComponent } from './user/user.component';
 import { OfficeComponent } from './office/office.component';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OfficeComponent } from './office/office.component';
     HttpInterceptorComponent,
     ActivatedRouteVActivatedRouteSnapshotComponent,
     UserComponent,
-    OfficeComponent
+    OfficeComponent,
+    ContentProjectionComponent
   ],
   imports: [
     BrowserModule,
