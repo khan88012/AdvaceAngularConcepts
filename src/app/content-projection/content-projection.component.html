@@ -1,6 +1,14 @@
 <h1 class="text-success text-center">content-projection works!</h1>
 <!-- <ng-content></ng-content> -->
 
-<ng-content select=".SecondContent"></ng-content>
-<ng-content select="[firstContent]"></ng-content>
+<!-- <ng-content select=".SecondContent"></ng-content>
+<ng-content select="[firstContent]"></ng-content> -->
 
+<div class="ms-5 text-success" *ngFor="let num of numbers"> 
+<!-- if we want to have only even numbers we need to have another div element or span element to put the *ngIf condition because we cannot have two structural directives in one element -->
+<span *ngIf="num % 2 ===0"> {{num}}</span>
+<!-- let's say if we have css written for all the spans then that will apply on above span too -->
+<!-- to avoid this scenario we can use ng-container , no layouts, styles anything affects it because angular does not create dom for it-->
+<ng-container *ngIf="num % 2 ===0"> {{num}}</ng-container>
+
+</div>
