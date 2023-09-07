@@ -12,3 +12,23 @@
 <ng-container *ngIf="num % 2 ===0"> {{num}}</ng-container>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+<!-- ng-template can be rendered only with structural directives  -->
+<ng-template [ngIf]="true"> This content is  inside ng-template</ng-template>
+<!-- Pay attention to [ngIf] here this is because angular transforms *ngIf to [ngIf] internally to render structural directive compo -->
+<!-- also we use ng-template when we want to have an else block -->
+
+<div *ngIf="false else elseBlock">If condition is true show this block</div>
+
+<ng-template #elseBlock>
+    <div>Show it if condition results to false</div>    
+</ng-template>
