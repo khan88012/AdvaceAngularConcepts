@@ -4,12 +4,12 @@
         <button (click)="getStatus()">Get Status</button>
     </div>
     <div class="section text-center mt-5" *ngIf = "section ==='country'">
-        <div class="country" *ngFor = "let country of countries"> {{ country}}</div>
+        <div class="country" *ngFor = "let country of countriesObservable | async "> {{ country}}</div>
     </div>
     <div class="section text-center mt-5" *ngIf = "section ==='status'">
         <div class="status">
-            <span *ngIf ="status" class="text-success">Online</span>
-            <span *ngIf ="!status" class="text-danger" >Offline</span>
+            <span *ngIf ="statusPromise | async" class="text-success">Online</span>
+            <span *ngIf ="!(statusPromise | async)" class="text-danger" >Offline</span>
 
         </div>
     </div>

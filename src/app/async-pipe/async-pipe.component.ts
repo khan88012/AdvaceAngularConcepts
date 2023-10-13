@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-async-pipe',
@@ -7,32 +8,25 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./async-pipe.component.css']
 })
 export class AsyncPipeComponent implements OnInit {
-  countries: string[] =[];
-  status = false;
   section = 'country';
+  countriesObservable! : Observable<string[]>;
+  statusPromise! : Promise<boolean>;
   constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
   }
-
   getCountries()
   {
     this.section = 'country';
-    //without async pipe on the view(html) we have to subscribe to the observable provided by getCountries method of dataService
-    this.dataService.getCountries().subscribe((res : string[]) =>{
-      this.countries = res;
-    });
+    //we assigned the observable itself to the 'countriesObservable' and async pipe on the template can subscribe to this on its own
+    this.countriesObservable = this.dataService.getCountries();
   }
 
   getStatus()
   {
     this.section = 'status';
-    this.status = false;
-    //without async pipe on the view(html) we have to resolve the promise provide by getStatus method of dataService
-
-    this.dataService.getStatus().then((res: boolean) =>{
-      this.status = res;
-    })
+    //we assigned the promise itself to the 'statusPromise' and async pipe on the template can resolve this on its own
+    this.statusPromise = this.dataService.getStatus();
 
   }
 }
