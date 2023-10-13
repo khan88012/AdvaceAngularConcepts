@@ -17,6 +17,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { PromiseComponent } from './promise/promise.component';
 import { OfficeComponent } from './office/office.component';
 import { UserComponent } from './user/user.component';
+import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 
 const routes: Routes = [
   {path :'home', component:HomeComponent},
@@ -47,6 +48,9 @@ const routes: Routes = [
   },
   {
     path:'user/:id', component : UserComponent
+  },
+  {
+    path:'async-pipe', component : AsyncPipeComponent
   }
 
   

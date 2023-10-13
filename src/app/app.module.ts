@@ -25,6 +25,7 @@ import { ActivatedRouteVActivatedRouteSnapshotComponent } from './activated-rout
 import { UserComponent } from './user/user.component';
 import { OfficeComponent } from './office/office.component';
 import { ContentProjectionComponent } from './content-projection/content-projection.component';
+import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ContentProjectionComponent } from './content-projection/content-project
     ActivatedRouteVActivatedRouteSnapshotComponent,
     UserComponent,
     OfficeComponent,
-    ContentProjectionComponent
+    ContentProjectionComponent,
+    AsyncPipeComponent
   ],
   imports: [
     BrowserModule,
