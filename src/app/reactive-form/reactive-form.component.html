@@ -1,0 +1,15 @@
+<h2 class="text-success">This is a demo for custom validator on a Reactive form.</h2>
+<small>['fool', 'idiot', "damn", 'stupid', 'bastard'], Please do not use these words.</small>
+<p>Value: {{ recForm.value | json }}</p>
+
+<form [formGroup]="recForm" (ngSubmit)="onSubmit()">
+    <label for="description">Description: </label>
+    <input id="description" type="text" formControlName="description">
+
+    <div *ngIf="recForm.get('description')?.dirty && recForm.get('description')?.invalid">
+
+    <small class="text-danger">Abusive words are not allowed</small>
+    </div>
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!recForm.valid">Submit</button>
+</form>

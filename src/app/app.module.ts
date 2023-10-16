@@ -26,6 +26,8 @@ import { UserComponent } from './user/user.component';
 import { OfficeComponent } from './office/office.component';
 import { ContentProjectionComponent } from './content-projection/content-projection.component';
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -50,12 +52,14 @@ import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
     UserComponent,
     OfficeComponent,
     ContentProjectionComponent,
-    AsyncPipeComponent
+    AsyncPipeComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
