@@ -18,14 +18,14 @@ export class AsyncPipeComponent implements OnInit {
   getCountries()
   {
     this.section = 'country';
-    //we assigned the observable itself to the 'countriesObservable' and async pipe on the template can subscribe to this on its own
+    //we assigned the observable itself to the 'countriesObservable' variable and async pipe on the template can subscribe to this on its own
     this.countriesObservable = this.dataService.getCountries();
   }
 
   getStatus()
   {
     this.section = 'status';
-    //we assigned the promise itself to the 'statusPromise' and async pipe on the template can resolve this on its own
+    //we assigned the promise itself to the 'statusPromise' variable and async pipe on the template can resolve this on its own
     this.statusPromise = this.dataService.getStatus();
 
   }

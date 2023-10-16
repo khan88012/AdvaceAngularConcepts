@@ -4,31 +4,24 @@
 <!-- <ng-content select=".SecondContent"></ng-content>
 <ng-content select="[firstContent]"></ng-content> -->
 
-<div class="ms-5 text-success" *ngFor="let num of numbers"> 
-<!-- if we want to have only even numbers we need to have another div element or span element to put the *ngIf condition because we cannot have two structural directives in one element -->
-<span *ngIf="num % 2 ===0"> {{num}}</span>
-<!-- let's say if we have css written for all the spans then that will apply on above span too -->
-<!-- to avoid this scenario we can use ng-container , no layouts, styles anything affects it because angular does not create dom for it-->
-<ng-container *ngIf="num % 2 ===0"> {{num}}</ng-container>
+<div class="ms-5 text-success" *ngFor="let num of numbers">
+  <!-- if we want to have only even numbers we need to have another div element or span element
+    to put the *ngIf condition because we cannot have two structural directives in one element as follows: -->
+  <span *ngIf="num % 2 === 0"> {{ num }}</span>
 
+  <!-- let's say if we have css written for all the spans then that will apply on above span too -->
+  <!-- to avoid this scenario we can use ng-container ,given that we do not add any html element inside ng-container
+    then no layouts, styles anything will affect it because angular does not create dom for it i.e we will just have the data without any html element housing it-->
+  <ng-container *ngIf="num % 2 === 0">{{ num }}</ng-container>
 </div>
 
-
-
-
-
-
-
-
-
-
 <!-- ng-template can be rendered only with structural directives  -->
-<ng-template [ngIf]="true"> This content is  inside ng-template</ng-template>
+<ng-template [ngIf]="true"> This content is inside ng-template</ng-template>
 <!-- Pay attention to [ngIf] here this is because angular transforms *ngIf to [ngIf] internally to render structural directive compo -->
 <!-- also we use ng-template when we want to have an else block -->
 
-<div *ngIf="false else elseBlock">If condition is true show this block</div>
+<div *ngIf="false; else elseBlock">If condition is true show this block</div>
 
 <ng-template #elseBlock>
-    <div>Show it if condition results to false</div>    
+  <div>Show it if condition results to false</div>
 </ng-template>
