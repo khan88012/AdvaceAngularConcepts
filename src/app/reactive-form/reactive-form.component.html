@@ -4,11 +4,18 @@
 
 <form [formGroup]="recForm" (ngSubmit)="onSubmit()">
     <label for="description">Description: </label>
-    <input id="description" type="text" formControlName="description">
+    <input id="description" type="text" class="form-control" formControlName="description">
 
     <div *ngIf="recForm.get('description')?.dirty && recForm.get('description')?.invalid">
 
-    <small class="text-danger">Abusive words are not allowed</small>
+        <small class="text-danger">Abusive words are not allowed</small>
+    </div>
+    <label for="name">Name: </label>
+
+    <input type="text" id="name" class="form-control" formControlName="name" required>
+    <div *ngIf="recForm.get('name')?.errors?.['forbiddenName']">
+
+        <small class="text-danger">We cannot have a name "Bob"</small>
     </div>
     <p>Complete the form to enable button.</p>
     <button type="submit" [disabled]="!recForm.valid">Submit</button>
