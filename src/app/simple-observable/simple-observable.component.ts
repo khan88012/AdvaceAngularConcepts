@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, from } from 'rxjs';
 
 @Component({
   selector: 'app-simple-observable',
@@ -10,7 +10,7 @@ export class SimpleObservableComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    const myObservable: Observable<number> = of(1, 2, 3, 4, 5);
+    const myObservable: Observable<number> = from([1,2,3]);   
 
     myObservable.subscribe(
       value => {
