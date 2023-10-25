@@ -28,6 +28,7 @@ import { ContentProjectionComponent } from './content-projection/content-project
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { SimpleObservableComponent } from './simple-observable/simple-observable.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     OfficeComponent,
     ContentProjectionComponent,
     AsyncPipeComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SimpleObservableComponent
   ],
   imports: [
     BrowserModule,
