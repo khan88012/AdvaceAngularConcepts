@@ -13,13 +13,10 @@ export class SimpleObservableComponent implements OnInit {
     const myObservable: Observable<number> = of(1, 2, 3, 4, 5);
 
     myObservable.subscribe(
-      {
-        next: (value) => {
+      value => {
           console.log('values ', value);
-        },
-        error: (err) => {},
-        complete: () => {},
       }
+      
     );
   }
 }
