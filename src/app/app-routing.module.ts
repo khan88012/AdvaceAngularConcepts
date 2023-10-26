@@ -20,6 +20,7 @@ import { UserComponent } from './user/user.component';
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SimpleObservableComponent } from './simple-observable/simple-observable.component';
+import { WebWorkerExampleComponent } from './web-worker-example/web-worker-example.component';
 
 const routes: Routes = [
   {path :'home', component:HomeComponent},
@@ -59,6 +60,9 @@ const routes: Routes = [
   },
   {
     path:'simple-observable', component: SimpleObservableComponent
+  },
+  {
+    path: 'web-worker-example', component: WebWorkerExampleComponent
   }
 
   

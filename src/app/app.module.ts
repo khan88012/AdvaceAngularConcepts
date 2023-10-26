@@ -29,6 +29,7 @@ import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SimpleObservableComponent } from './simple-observable/simple-observable.component';
+import { WebWorkerExampleComponent } from './web-worker-example/web-worker-example.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { SimpleObservableComponent } from './simple-observable/simple-observable
     ContentProjectionComponent,
     AsyncPipeComponent,
     ReactiveFormComponent,
-    SimpleObservableComponent
+    SimpleObservableComponent,
+    WebWorkerExampleComponent
   ],
   imports: [
     BrowserModule,

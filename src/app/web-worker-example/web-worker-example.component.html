@@ -1,0 +1,20 @@
+<h1 class="text-center bg-info" style="height: 50px;">Web Worker</h1>
+
+
+<button class="btn btn-primary" style=" margin-top: 10vh;" (click)="primeNumbers()"> Find 10th prime number -> Normal Way</button>
+<div><small class="text-danger">Click this button and try to write in the input field, you will see that it is frozen as the computation is taking place.</small>
+</div>
+<p>The 10000th prime number is {{tenThousandPrimeNormal}}</p>
+
+
+<button class="btn btn-secondary" style=" margin-top: 10vh;" (click)="primeNumberWebWorker()">Find 10000th prime number With web worker.</button>
+<p>The 10000th prime number is {{tenThousandPrimeWebWorker}}</p>
+
+
+
+<form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Enter text here...</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+</form>
